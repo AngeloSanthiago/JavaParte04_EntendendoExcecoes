@@ -7,8 +7,8 @@ public class Fluxo {
 			metodo1();
 		} catch (ArithmeticException | NullPointerException | MinhaExcecao ex) {
 			String msg = ex.getMessage();
-			System.out.println("Exception" + msg);
-			ex.printStackTrace();
+			System.out.println("Excessão: " + msg);
+			ex.printStackTrace(); // A impressão das mensagem em vermelho da pilha de excessao as vezes aparece por último no log de execução
 		}
 		System.out.println("Fim do main");
 	}
