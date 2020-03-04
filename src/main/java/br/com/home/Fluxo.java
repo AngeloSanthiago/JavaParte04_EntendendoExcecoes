@@ -15,7 +15,13 @@ public class Fluxo {
 
 	public static void metodo1() throws MinhaExcecao {
 		System.out.println("Inicio do metodo1");
-		metodo2();
+		try {
+			metodo2();
+		} catch (ArithmeticException | NullPointerException | MinhaExcecao ex) {
+			String msg = ex.getMessage();
+			System.out.println("Excessão: " + msg);
+			ex.printStackTrace(); // A impressão das mensagem em vermelho da pilha de excessao as vezes aparece por último no log de execução
+		}
 		System.out.println("Fim do metodo1");
 
 	}
