@@ -1,6 +1,6 @@
 package br.com.home;
 
-public class Fluxo {
+public class FluxoComTratamento {
 	public static void main(String[] args) {
 		System.out.println("Inicio do main");
 		try {
@@ -25,7 +25,7 @@ public class Fluxo {
 		System.out.println("Fim do metodo1");
 
 	}
- 
+
 	public static void metodo2() throws MinhaExcecao {
 		System.out.println("Inicio do metodo2");
 		boolean lancaExcecao = true; // Para compilar o ultimo comando
