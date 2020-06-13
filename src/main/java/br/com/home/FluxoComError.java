@@ -16,7 +16,7 @@ public class FluxoComError {
 
 	}
 
-	private static void metodo1() throws MinhaExcecao {
+	private static void metodo1() throws MinhaExcecao{
 		System.out.println("Inicio do método1");
 		metodo2();
 		System.out.println("Fim do método1");

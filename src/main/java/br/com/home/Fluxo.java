@@ -5,7 +5,8 @@ public class Fluxo {
 		System.out.println("Inicio do main");
 		try {
 			metodo1();
-		} catch (ArithmeticException | NullPointerException | MinhaExcecao ex) {
+			// Catch polimórfico
+		} catch (Exception ex) {
 			String msg = ex.getMessage();
 			System.out.println("Excessão: " + msg);
 			ex.printStackTrace(); // A impressão das mensagem em vermelho da pilha de excessao as vezes aparece por último no log de execução
