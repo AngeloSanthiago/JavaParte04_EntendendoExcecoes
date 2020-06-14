@@ -1,26 +1,32 @@
 package br.com.home;
 
 public abstract class Conta {
-	private double saldo;
+	public double saldo;
+
+	public Conta(int agencia, int numero) {
+		// TODO Auto-generated constructor stub
+	}
+
 	void deposita() throws MinhaExcecao {
 		System.out.println("inicio deposito");
 		throw new MinhaExcecao("Falha no deposito");
 	}
-	public boolean saca(double valor) {
-		if (this.saldo >= valor) {
-			this.saldo -= valor;
-			return true;
-		} else {
-			return false;
+
+	public void saca(double valor) {
+		if (this.saldo < valor) {
+			throw new SaldoInsuficienteException("Saldo: " + this.saldo + " - Valor: " + valor);
 		}
+		this.saldo -= valor;
 	}
-	public boolean transfere(double valor, Conta destino) {
-		if (this.saca(valor)) {
-			destino.deposita(valor);
-			return true;
-		} else {
-			return false;
-		}
+
+	public void transfere(double valor, Conta destino) {
+		this.saca(valor);
+		destino.deposita(valor);
 	}
+
 	public abstract void deposita(double valor);
+
+	public double getSaldo() {
+		return this.saldo;
+	}
 }
