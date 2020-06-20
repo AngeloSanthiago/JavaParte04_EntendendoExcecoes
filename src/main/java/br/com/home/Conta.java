@@ -4,7 +4,12 @@ public abstract class Conta {
 	public double saldo;
 
 	public Conta(int agencia, int numero) {
-		// TODO Auto-generated constructor stub
+		if (agencia < 1) {
+			throw new IllegalArgumentException("Numero da agencia invalida");
+		}
+		if (numero < 1) {
+			throw new IllegalArgumentException("Número da conta invalida");
+		}
 	}
 
 	void deposita() throws MinhaExcecao {
